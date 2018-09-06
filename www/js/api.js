@@ -13,6 +13,29 @@ function getCalendarData()
     return res;
 }
 
+function getCalendarDataByPromo(promo)
+{
+    var res = undefined;
+    var lectureURL = "http://swiv.outofpluto.com:8082/api/lecture/lecture/";
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange  = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var temp = JSON.parse(this.responseText);
+            res = [];
+            for (var e of temp)
+            {
+                if (e['promo']==promo)
+                {
+                    res.push(e);
+                }
+            }
+        }
+    };
+    xmlhttp.open("GET", lectureURL, false);
+    xmlhttp.send();
+    return res;
+}
+
 function getCalendarNotification()
 {
     var res = undefined;
