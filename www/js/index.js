@@ -11,8 +11,9 @@ var app = {
     onDeviceReady: function() {
         notif.init();
         setTimeout(function (params) {
-            notif.send('test');
-            console.log('notif');
+            getCalendarNotification().forEach(element => {
+                notif.send(new Date(element.time).toDateString(), element.message);
+            });
         }, 2000);
     }
 };
