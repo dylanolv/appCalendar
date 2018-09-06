@@ -1,20 +1,22 @@
 # Android
-appCalendar/platforms/android/assets/www
-appCalendar/platforms/android/bin/
-appCalendar/platforms/android/gen/
-appCalendar/platforms/android/res/xml/config.xml
+platforms/android/assets/www
+platforms/android/bin/
+platforms/android/gen/
+platforms/android/res/xml/config.xml
 
 # iOS
-appCalendar/platforms/ios/build/
-appCalendar/platforms/ios/CordovaLib/build/
-appCalendar/platforms/ios/www
-appCalendar/platforms/ios/MyPace/config.xml
-appCalendar/platforms/ios/.staging
+platforms/ios/build/
+platforms/ios/CordovaLib/build/
+platforms/ios/www
+platforms/ios/MyPace/config.xml
+platforms/ios/.staging
 
 # Emulator logs
-appCalendar/platforms/ios/cordova/console.log
+platforms/ios/cordova/console.log
 
 
-appCalendar/hooks/
-appCalendar/plugins/
-appCalendar/res/
+hooks/
+plugins/
+res/
+node_modules/
+platforms/
