@@ -61,3 +61,50 @@ $(document).ready(function () {
     });
 
 });
+
+function onSuccess(msg) {
+  alert('Calendar success: ' + JSON.stringify(msg));
+}
+
+function onError(msg) {
+  alert('Calendar error: ' + JSON.stringify(msg));
+}
+document.getElementById('addToCalendar').addEventListener('click', function () {
+  var title = 'My Event Title';
+  var loc = 'My Event Location';
+  var notes = 'My interesting Event notes.';
+  var startDate = new Date();
+  var endDate = new Date();
+
+  // clean up the dates a bit
+  startDate.setMinutes(0);
+  endDate.setMinutes(0);
+  startDate.setSeconds(0);
+  endDate.setSeconds(0);
+
+  // add a few hours to the dates, JS will automatically update the date (+1 day) if necessary
+  startDate.setHours(startDate.getHours() + 2);
+  endDate.setHours(endDate.getHours() + 3);
+  window.plugins.calendar.requestWritePermission();
+  window.plugins.calendar.requestReadPermission();
+  window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate, onSuccess, onError);
+
+  //console.log(getCalendarData());
+  /*var data = getCalendarData();
+  for (var i = 0; i < data.length; i++) {
+
+    console.log(i);
+
+    var startDate = new Date();
+    var endDate = new Date();
+
+    startDate.setMinutes(0);
+    endDate.setMinutes(0);
+    startDate.setSeconds(0);
+    endDate.setSeconds(0);
+
+    startDate.setHours(startDate.getHours() + 2);
+    endDate.setHours(endDate.getHours() + 3);
+
+  }*/
+});
