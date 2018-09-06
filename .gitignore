@@ -20,3 +20,4 @@ plugins/
 res/
 node_modules/
 platforms/
+.idea
