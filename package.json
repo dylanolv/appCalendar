@@ -1,0 +1,15 @@
+{
+  "name": "io.cordova.appcalendar",
+  "version": "1.0.0",
+  "displayName": "appCalendar",
+  "cordova": {
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "cordova-android": "^7.1.1",
+    "cordova-browser": "^5.0.4"
+  }
+}
